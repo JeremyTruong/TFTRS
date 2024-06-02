@@ -2,25 +2,25 @@ import React from "react";
 import { Grid, TextField, MenuItem, Typography, Button } from "@mui/material";
 import Header from "../Header";
 
-// currently updated for set 9.0
+// currently updated for set 11
 // the number of unique champs in the game at each cost
-let numUniqueChamps = [13, 13, 13, 12, 8]
+let numUniqueChamps = [13, 13, 13, 12, 9]
 
-// the amount of champions in the pool at each cost
-let numChampsInPool = [29, 22, 18, 12, 10]
+// the amount of champions in the pool at each cost (bag sizes)
+let numChampsInPool = [22, 20, 17, 10, 9]
 
-// the odds of hitting a certain cost at each level
+// shop odds at each level
 let rollingChances = [
     [100,0,0,0,0],
     [100,0,0,0,0],
     [75,25,0,0,0],
     [55,30,15,0,0],
     [45,33,20,2,0],
-    [25,40,30,5,0],
-    [19,30,35,15,1],
-    [16,20,35,25,4],
-    [9,15,30,30,16],
-    [5,10,29,40,25],
+    [30,40,25,5,0],
+    [20,33,36,10,1],
+    [18,27,32,20,4],
+    [15,20,25,30,10],
+    [5,10,20,40,25],
     [1,2,12,50,35],
 ]
 
@@ -33,7 +33,7 @@ let championCosts = [1, 2, 3, 4, 5]
 // emulate Python's range function
 let range = n => [...Array(n).keys()]
 
-// emulate Python's randint function
+// emulate Python's randInt function
 let randInt = (min, max) => {
     // max + 1 to include the maximum
     let ret = Math.floor(Math.random() * ((max + 1) - min)) + min
@@ -174,7 +174,7 @@ class MainPage extends React.Component {
                 numHits += 1
             }
         }
-        console.log(numHits)
+        // console.log(numHits)
 
         this.setState({
             percentage: ((numHits / numTrials) * 100).toFixed(2)
