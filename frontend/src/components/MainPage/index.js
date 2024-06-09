@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid, TextField, MenuItem, Typography, Button } from "@mui/material";
-import Header from "../Header";
 
 // currently updated for set 11
 // the number of unique champs in the game at each cost
@@ -18,8 +17,7 @@ let rollingChances = [
     [45,33,20,2,0],
     [30,40,25,5,0],
     [20,33,36,10,1],
-    [18,27,32,20,4],
-    [15,20,25,30,10],
+    [18,27,32,20,4], 
     [5,10,20,40,25],
     [1,2,12,50,35],
 ]
@@ -183,7 +181,6 @@ class MainPage extends React.Component {
 
     render() {
         return (<div>
-            <Header></Header>
 
             <Grid container justifyContent="center">
                 <Typography variant="h1" my={3} gutterBottom>
